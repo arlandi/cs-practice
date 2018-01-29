@@ -91,17 +91,38 @@ class BST {
       console.log(node.value);
     }
   }
+
+  // Gets the max depth of the tree
+  // https://www.quora.com/What-is-the-difference-between-height-and-depth-of-a-tree
+  depth(node) {
+    if (!node) {
+      return -1;
+    }
+
+    // Find the max depth of the left and right subtree, then add 1 for the root node.
+    return Math.max(this.depth(node.left), this.depth(node.right)) + 1;
+  }
+
+  // Gets the max height of the tree
+  // https://www.quora.com/What-is-the-difference-between-height-and-depth-of-a-tree
+  height(node) {
+    if (!node) {
+      return 0;
+    }
+
+    // Find the max height of the left and right subtree, then add 1 for the root node.
+    return Math.max(this.height(node.left), this.height(node.right)) + 1;
+  }
 }
 
 const bst = new BST();
 
 bst.insert(5);
-bst.insert(2);
-bst.insert(4);
-bst.insert(3);
-bst.insert(1);
+bst.insert(8);
+bst.insert(9);
 bst.insert(10);
-bst.insert(7);
+bst.insert(11);
 bst.insert(6);
+bst.insert(7);
 
-console.log(bst.search(6));
+console.log(bst.height(bst.root));
