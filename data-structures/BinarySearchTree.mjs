@@ -1,13 +1,7 @@
+import Node from './Node.mjs';
+
 // A BST Node can only have two children where the left subtree's values
 // are less than the node's values and right subtree's values are greater
-class Node {
-  constructor(value) {
-    this.value = value;
-    this.left = null;
-    this.right = null;
-  }
-}
-
 class BST {
   constructor() {
     this.root = null;
@@ -125,4 +119,5 @@ bst.insert(11);
 bst.insert(6);
 bst.insert(7);
 
-console.log(bst.height(bst.root));
+// console.log(bst.height(bst.root));
+bst.inOrder(bst.root);
