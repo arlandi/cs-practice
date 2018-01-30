@@ -23,19 +23,18 @@ export default class Stack {
   }
 
   pop() {
+    if (this.isEmpty()) return undefined;
+
     // Get the tail node
     const node = this._tail;
 
-    // If the tail node is not null
-    if (node) {
-      // Set the tail to the next node
-      this._tail = node.next;
+    // Set the tail to the next node
+    this._tail = node.next;
 
-      // Decrease length
-      this.length--;
-    }
+    // Decrease length
+    this.length--;
 
-    return node ? node.val : undefined;
+    return node.val;
   }
 
   isEmpty() {
@@ -43,6 +42,6 @@ export default class Stack {
   }
 
   peek() {
-    return this._tail ? this._tail.val : undefined;
+    return this.isEmpty() ? undefined : this._tail.val;
   }
 }
