@@ -42,7 +42,7 @@ export default class BinaryTree {
   }
 
   // Traverse tree in pre-order, returns an array
-  preOrder(node) {
+  preOrder() {
     const result = [];
 
     // The recursive function
@@ -60,7 +60,7 @@ export default class BinaryTree {
   }
 
   // Traverse tree in post-order, returns an array
-  postOrder(node) {
+  postOrder() {
     const result = [];
 
     // The recursive function

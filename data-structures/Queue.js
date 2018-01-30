@@ -10,8 +10,6 @@ export default class Queue {
 
   // Adds an element to the back of the queue
   enqueue(value) {
-    if (!value) return false;
-
     const node = new Node(value);
 
     // Set the next pointer of the tail node to the new node

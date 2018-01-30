@@ -7,8 +7,6 @@ export default class Stack {
   }
 
   push(value) {
-    if (!value) return false;
-
     const node = new Node(value);
 
     // Set the next pointer to previous tail node
