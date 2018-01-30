@@ -1,0 +1,25 @@
+{
+  "name": "cs-practice",
+  "version": "0.0.1",
+  "description": "Data structures and algorithms in Javascript",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": "git+https://github.com/arlandi/cs-practice.git",
+  "keywords": [
+    "algorithms",
+    "data",
+    "structures"
+  ],
+  "author": "Anggi Priatmadi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/arlandi/cs-practice/issues"
+  },
+  "homepage": "https://github.com/arlandi/cs-practice#readme",
+  "dependencies": {
+    "jest": "^20.0.4",
+    "babel-jest": "^20.0.3",
+    "babel-preset-env": "^1.6.0"
+  }
+}
