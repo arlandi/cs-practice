@@ -47,3 +47,6 @@ var mySqrt = function(x) {
 
     return answer;
 };
+
+// Implement sqrt with precision:
+// http://www.cs.wustl.edu/~kjg/CS101_SP97/Notes/SquareRoot/sqrt.html
