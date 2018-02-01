@@ -35,6 +35,7 @@ ways(n) = ways(n-1) + ways(n-2)
  * @param {number} n
  * @return {number}
  */
+ // Time and Space complexity is O(n)
 var climbStairs = function(n) {
     const numberOfWays = [];
 
