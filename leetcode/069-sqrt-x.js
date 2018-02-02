@@ -23,7 +23,7 @@ var mySqrt = function(x) {
     return i*i === x ? i : i - 1;
 };
 
-// Binary Search solution - O(n)
+// Binary Search solution - O(logn)
 var mySqrt = function(x) {
     if (x < 2) return x;
 
