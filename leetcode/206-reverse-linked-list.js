@@ -9,6 +9,8 @@
  * @param {ListNode} head
  * @return {ListNode}
  */
+// Time O(n)
+// Space O(1)
 var reverseList = function(head) {
     let currentNode = head;
     let nextNode = null;
