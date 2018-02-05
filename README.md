@@ -1,7 +1,3 @@
-Common data structures and algorithms implemented in javascript.
-
-### [Front End Questions](front-end-questions.md)
-
 ### Data Structures
 - [SinglyLinkedList](data-structures/SinglyLinkedList.js)
 - [Stack](data-structures/Stack.js)
@@ -14,3 +10,7 @@ Common data structures and algorithms implemented in javascript.
 - Segment Tree (TODO)
 - Graphs (TODO)
 - N-D arrays (TODO)
+
+### Other
+- [Front End Questions and Answers](front-end-questions.md)
+- [Leetcode Solutions](leetcode)
