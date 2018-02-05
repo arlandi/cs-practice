@@ -48,7 +48,7 @@ In the back end, the HTML markup will contain `i18n` placeholders and content fo
 </details>
 
 <details>
-<summary>What are `data-` attributes good for?</summary>
+<summary>What are data attributes good for?</summary>
 <br>
 
 Before JavaScript frameworks became popular, front end developers used `data-` attributes to store extra data within the DOM itself, without other hacks such as non-standard attributes, extra properties on the DOM. It is intended to store custom data private to the page or application, for which there are no more appropriate attributes or elements.
@@ -80,7 +80,7 @@ These days, using `data-` attributes is not encouraged. One reason is that users
 </details>
 
 <details>
-<summary>Describe the difference between a `cookie`, `sessionStorage` and `localStorage`.</summary>
+<summary>Describe the difference between a cookie, sessionStorage and localStorage.</summary>
 <br>
 
 
@@ -103,7 +103,7 @@ All the above mentioned technologies are key-value storage mechanisms on the cli
 </details>
 
 <details>
-<summary>Describe the difference between `<script>`, `<script async>` and `<script defer>`.</summary>
+<summary>Describe the difference between script tags with async and defer attributes.</summary>
 <br>
 
 * `<script>` - HTML parsing is blocked, the script is fetched and executed immediately, HTML parsing resumes after the script is executed.
@@ -120,7 +120,7 @@ Note: The `async` and `defer` attrib­utes are ignored for scripts that have no 
 </details>
 
 <details>
-<summary>Why is it generally a good idea to position CSS `<link>`s between `<head></head>` and JS `<script>`s just before `</body>`? Do you know any exceptions?</summary>
+<summary>Why is it generally a good idea to position CSS link tags inside the head tags and JS script tags just before the closing body tag? Do you know any exceptions?</summary>
 <br>
 
 **Placing `<link>`s in the `<head>`**
@@ -1172,7 +1172,7 @@ duplicate([1, 2, 3, 4, 5]); // [1,2,3,4,5,1,2,3,4,5]
 </details>
 
 <details>
-<summary>What is `"use strict";`? What are the advantages and disadvantages to using it?</summary>
+<summary>What is "use strict";? What are the advantages and disadvantages to using it?</summary>
 <br>
 
 'use strict' is a statement used to enable strict mode to entire scripts or individual functions. Strict mode is a way to opt in to a restricted variant of JavaScript.
@@ -1199,28 +1199,6 @@ Overall, I think the benefits outweigh the disadvantages, and I never had to rel
 
 * http://2ality.com/2011/10/strict-mode-hatred.html
 * http://lucybain.com/blog/2014/js-use-strict/
-
-</details>
-
-<details>
-<summary>Create a for loop that iterates up to `100` while outputting **"fizz"** at multiples of `3`, **"buzz"** at multiples of `5` and **"fizzbuzz"** at multiples of `3` and `5`.</summary>
-<br>
-
-Check out this version of FizzBuzz by [Paul Irish](https://gist.github.com/jaysonrowe/1592432#gistcomment-790724).
-
-```js
-for (let i = 1; i <= 100; i++) {
-  let f = i % 3 == 0,
-    b = i % 5 == 0;
-  console.log(f ? (b ? 'FizzBuzz' : 'Fizz') : b ? 'Buzz' : i);
-}
-```
-
-I would not advise you to write the above during interviews though. Just stick with the long but clear approach. For more wacky versions of FizzBuzz, check out the reference link below.
-
-###### References
-
-* https://gist.github.com/jaysonrowe/1592432
 
 </details>
 
