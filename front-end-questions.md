@@ -353,12 +353,7 @@ Yes. An example would be transforming a stacked pill navigation into a fixed-bot
 </details>
 
 <details>
-<summary>[What are some of the "gotchas" for writing efficient CSS?](#what-are-some-of-the-gotchas-for-writing-efficient-css)</summary>
-<br>
-</details>
-
-<details>
-<summary>What are the advantages/disadvantages of using CSS preprocessors?</summary>
+<summary>What are some of the "gotchas" for writing efficient CSS?</summary>
 <br>
 Firstly, understand that browsers match selectors from rightmost (key selector) to left. Browsers filter out elements in the DOM according to the key selector, and traverse up its parent elements to determine matches. The shorter the length of the selector chain, the faster the browser can determine if that element matches the selector. Hence avoid key selectors that are tag and universal selectors. They match a large numbers of elements and browsers will have to do more work in determining if the parents do match.
 
@@ -550,473 +545,9 @@ When using `translate()`, the element still takes up its original space (sort of
 
 ## JS Questions
 
-* [Explain event delegation](#explain-event-delegation)
-* [Explain how this works in JavaScript](#explain-how-this-works-in-javascript)
-* [Explain how prototypal inheritance works](#explain-how-prototypal-inheritance-works)
-* [What do you think of AMD vs CommonJS?](#what-do-you-think-of-amd-vs-commonjs)
-* [Explain why the following doesn't work as an IIFE: function foo(){ }();. What needs to be changed to properly make it an IIFE?](#explain-why-the-following-doesnt-work-as-an-iife-function-foo--what-needs-to-be-changed-to-properly-make-it-an-iife)
-* [What's the difference between a variable that is: `null`, `undefined` or undeclared? How would you go about checking for any of these states?](#whats-the-difference-between-a-variable-that-is-null-undefined-or-undeclared-how-would-you-go-about-checking-for-any-of-these-states)
-* [What is a closure, and how/why would you use one?](#what-is-a-closure-and-howwhy-would-you-use-one)
-* Can you describe the main difference between a `forEach` loop and a `.map()` loop and why you would pick one versus the other? (TODO)
-* [What's a typical use case for anonymous functions?](#whats-a-typical-use-case-for-anonymous-functions)
-* [How do you organize your code? (module pattern, classical inheritance?)](#how-do-you-organize-your-code-module-pattern-classical-inheritance)
-* [What's the difference between host objects and native objects?](#whats-the-difference-between-host-objects-and-native-objects)
-* [Difference between: function `Person(){}`, `var person = Person()`, and `var person = new Person()`?](#difference-between-function-person-var-person--person-and-var-person--new-person)
-* [What's the difference between `.call` and `.apply`?](#whats-the-difference-between-call-and-apply)
-* [Explain `Function.prototype.bind`.](#explain-functionprototypebind)
-* [When would you use `document.write()`?](#when-would-you-use-documentwrite)
-* [What's the difference between feature detection, feature inference, and using the UA string?](#whats-the-difference-between-feature-detection-feature-inference-and-using-the-ua-string)
-* [Explain Ajax in as much detail as possible.](#explain-ajax-in-as-much-detail-as-possible)
-* [What are the advantages and disadvantages of using Ajax?](#what-are-the-advantages-and-disadvantages-of-using-ajax)
-* [Explain how JSONP works (and how it's not really Ajax).](#explain-how-jsonp-works-and-how-its-not-really-ajax)
-* [Have you ever used JavaScript templating? If so, what libraries have you used?](#have-you-ever-used-javascript-templating-if-so-what-libraries-have-you-used)
-* [Explain "hoisting".](#explain-hoisting)
-* [Describe event bubbling.](#describe-event-bubbling)
-* [What's the difference between an "attribute" and a "property"?](#whats-the-difference-between-an-attribute-and-a-property)
-* [Why is extending built-in JavaScript objects not a good idea?](#why-is-extending-built-in-javascript-objects-not-a-good-idea)
-* [Difference between document `load` event and document `DOMContentLoaded` event?](#difference-between-document-load-event-and-document-domcontentloaded-event)
-* [What is the difference between `==` and `===`?](#what-is-the-difference-between--and-)
-* [Explain the same-origin policy with regards to JavaScript.](#explain-the-same-origin-policy-with-regards-to-javascript)
-* [Make this work: `duplicate([1,2,3,4,5]); // [1,2,3,4,5,1,2,3,4,5]`](#make-this-work)
-* [Why is it called a Ternary expression, what does the word "Ternary" indicate?](#why-is-it-called-a-ternary-expression-what-does-the-word-ternary-indicate)
-* [What is "use strict";? what are the advantages and disadvantages to using it?](#what-is-use-strict-what-are-the-advantages-and-disadvantages-to-using-it)
-* [Create a for loop that iterates up to 100 while outputting "fizz" at multiples of 3, "buzz" at multiples of 5 and "fizzbuzz" at multiples of 3 and 5](#create-a-for-loop-that-iterates-up-to-100-while-outputting-fizz-at-multiples-of-3-buzz-at-multiples-of-5-and-fizzbuzz-at-multiples-of-3-and-5)
-* [Why is it, in general, a good idea to leave the global scope of a website as-is and never touch it?](#why-is-it-in-general-a-good-idea-to-leave-the-global-scope-of-a-website-as-is-and-never-touch-it)
-* [Why would you use something like the `load` event? Does this event have disadvantages? Do you know any alternatives, and why would you use those?](#why-would-you-use-something-like-the-load-event-does-this-event-have-disadvantages-do-you-know-any-alternatives-and-why-would-you-use-those)
-* [Explain what a single page app is and how to make one SEO-friendly.](#explain-what-a-single-page-app-is-and-how-to-make-one-seo-friendly)
-* [What is the extent of your experience with Promises and/or their polyfills?](#what-is-the-extent-of-your-experience-with-promises-andor-their-polyfills)
-* [What are the pros and cons of using Promises instead of callbacks?](#what-are-the-pros-and-cons-of-using-promises-instead-of-callbacks)
-* [What are some of the advantages/disadvantages of writing JavaScript code in a language that compiles to JavaScript?](#what-are-some-of-the-advantagesdisadvantages-of-writing-javascript-code-in-a-language-that-compiles-to-javascript)
-* [What tools and techniques do you use debugging JavaScript code?](#what-tools-and-techniques-do-you-use-for-debugging-javascript-code)
-* [What language constructions do you use for iterating over object properties and array items?](#what-language-constructions-do-you-use-for-iterating-over-object-properties-and-array-items)
-* [Explain the difference between mutable and immutable objects.](#explain-the-difference-between-mutable-and-immutable-objects)
-* [Explain the difference between synchronous and asynchronous functions.](#explain-the-difference-between-synchronous-and-asynchronous-functions)
-* [What is event loop? What is the difference between call stack and task queue?](#what-is-event-loop-what-is-the-difference-between-call-stack-and-task-queue)
-* [Explain the differences on the usage of `foo` between `function foo() {}` and `var foo = function() {}`](#explain-the-differences-on-the-usage-of-foo-between-function-foo--and-var-foo--function-)
-* What are the differences between variables created using `let`, `var` or `const`? (TODO)
-* What are the differences between ES6 class and ES5 function constructors? (TODO)
-* Can you offer a use case for the new arrow => function syntax? How does this new syntax differ from other functions? (TODO)
-* What advantage is there for using the arrow syntax for a method in a constructor? (TODO)
-* What is the definition of a higher-order function? (TODO)
-* Can you give an example for destructuring an object or an array? (TODO)
-* ES6 Template Literals offer a lot of flexibility in generating strings, can you give an example? (TODO)
-* Can you give an example of a curry function and why this syntax offers an advantage? (TODO)
-* What are the benefits of using spread syntax and how is it different from rest syntax? (TODO)
-* How can you share code between files? (TODO)
-* Why you might want to create static class members? (TODO)
-
----
-
-## CSS Questions
-
-Answers to [Front-end Job Interview Questions - CSS Questions](https://github.com/h5bp/Front-end-Developer-Interview-Questions#css-questions). Pull requests for suggestions and corrections are welcome!
-
-### What is CSS selector specificity and how does it work?
-
-The browser determines what styles to show on an element depending on the specificity of CSS rules. We assume that the browser has already determined the rules that match a particular element. Among the matching rules, the specificity, four comma-separate values, `a, b, c, d` are calculated for each rule based on the following:
-
-1. `a` is whether inline styles are being used. If the property declaration is an inline style on the element, `a` is 1, else 0.
-2. `b` is the number of ID selectors.
-3. `c` is the number of classes, attributes and pseudo-classes selectors.
-4. `d` is the number of tags and pseudo-elements selectors.
-
-The resulting specificity is not a score, but a matrix of values that can be compared column by column. When comparing selectors to determine which has the highest specificity, look from left to right, and compare the highest value in each column. So a value in column `b` will override values in columns `c` and `d`, no matter what they might be. As such, specificity of `0,1,0,0` would be greater than one of `0,0,10,10`.
-
-In the cases of equal specificity: the latest rule is the one that counts. If you have written the same rule into your style sheet (regardless of internal or external) twice, then the lower rule in your style sheet is closer to the element to be styled, it is deemed to be more specific and therefore will be applied.
-
-I would write CSS rules with low specificity so that they can be easily overridden if necessary. When writing CSS UI component library code, it is important that they have low specificities so that users of the library can override them without using too complicated CSS rules just for the sake of increasing specificity or resorting to `!important`.
-
-###### References
-
-* https://www.smashingmagazine.com/2007/07/css-specificity-things-you-should-know/
-* https://www.sitepoint.com/web-foundations/specificity/
-
-### What is the difference between classes and IDs in CSS?
-
-* **IDs** - Meant to be unique within the document. Can be used to identify an element when linking using a fragment identifier. Elements can only have one `id` attribute.
-* **Classes** - Can be reused on multiple elements within the document. Mainly for styling and targeting elements.
-
-###### References
-
-* https://www.w3.org/TR/CSS1/#id-as-selector
-* https://www.w3.org/TR/CSS1/#class-as-selector
-
-### What's the difference between "resetting" and "normalizing" CSS? Which would you choose, and why?
-
-* **Resetting** - Resetting is meant to strip all default browser styling on elements. For e.g. `margin`s, `padding`s, `font-size`s of all elements are reset to be the same. You will have to redeclare styling for common typographic elements.
-* **Normalizing** - Normalizing preserves useful default styles rather than "unstyling" everything. It also corrects bugs for common browser dependencies.
-
-I would choose resetting when I have very a customized or unconventional site design such that I need to do a lot of my own styling do not need any default styling to be preserved.
-
-###### References
-
-* https://stackoverflow.com/questions/6887336/what-is-the-difference-between-normalize-css-and-reset-css
-
-### Describe `float`s and how they work.
-
-Float is a CSS positioning property. Floated elements remain a part of the flow of the page, and will affect the positioning of other elements (e.g. text will flow around floated elements), unlike `position: absolute` elements, which are removed from the flow of the page.
-
-The CSS `clear` property can be used to be positioned below `left`/`right`/`both` floated elements.
-
-If a parent element contains nothing but floated elements, its height will be collapsed to nothing. It can be fixed by clearing the float after the floated elements in the container but before the close of the container.
-
-The `.clearfix` hack uses a clever CSS pseudo selector (`:after`) to clear floats. Rather than setting the overflow on the parent, you apply an additional class `clearfix` to it. Then apply this CSS:
-
-```css
-.clearfix:after {
-  content: ' ';
-  visibility: hidden;
-  display: block;
-  height: 0;
-  clear: both;
-}
-```
-
-Alternatively, give `overflow: auto` or `overflow: hidden` property to the parent element which will establish a new block formatting context inside the children and it will expand to contain its children.
-
-###### References
-
-* https://css-tricks.com/all-about-floats/
-
-### Describe `z-index` and how stacking context is formed.
-
-The `z-index` property in CSS controls the vertical stacking order of elements that overlap. `z-index` only effects elements that have a `position` value which is not `static`.
-
-Without any `z-index` value, elements stack in the order that they appear in the DOM (the lowest one down at the same hierarchy level appears on top). Elements with non-static positioning (and their children) will always appear on top of elements with default static positioning, regardless of HTML hierarchy.
-
-A stacking context is an element that contains a set of layers. Within a local stacking context, the `z-index` values of its children are set relative to that element rather than to the document root. Layers outside of that context — i.e. sibling elements of a local stacking context — can't sit between layers within it. If an element B sits on top of element A, a child element of element A, element C, can never be higher than element B even if element C has a higher `z-index` than element B.
-
-Each stacking context is self-contained - after the element's contents are stacked, the whole element is considered in the stacking order of the parent stacking context. A handful of CSS properties trigger a new stacking context, such as `opacity` less than 1, `filter` that is not `none`, and `transform that is not`none`.
-
-###### References
-
-* https://css-tricks.com/almanac/properties/z/z-index/
-* https://philipwalton.com/articles/what-no-one-told-you-about-z-index/
-* https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context
-
-### Describe Block Formatting Context (BFC) and how it works.
-
-A Block Formatting Context (BFC) is part of the visual CSS rendering of a web page in which block boxes are laid out. Floats, absolutely positioned elements, `inline-blocks`, `table-cells`, `table-caption`s, and elements with `overflow` other than `visible` (except when that value has been propagated to the viewport) establish new block formatting contexts.
-
-A BFC is an HTML box that satisfies at least one of the following conditions:
-
-* The value of `float` is not `none`.
-* The value of `position` is neither `static` nor `relative`.
-* The value of `display` is `table-cell`, `table-caption`, `inline-block`, `flex`, or `inline-flex`.
-* The value of `overflow` is not `visible`.
-
-In a BFC, each box's left outer edge touches the left edge of the containing block (for right-to-left formatting, right edges touch).
-
-Vertical margins between adjacent block-level boxes in a BFC collapse. Read more on [collapsing margins](https://www.sitepoint.com/web-foundations/collapsing-margins/).
-
-###### References
-
-* https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Block_formatting_context
-* https://www.sitepoint.com/understanding-block-formatting-contexts-in-css/
-
-### What are the various clearing techniques and which is appropriate for what context?
-
-* Empty `div` method - `<div style="clear:both;"></div>`.
-* Clearfix method - Refer to the `.clearfix` class above.
-* `overflow: auto` or `overflow: hidden` method - Parent will establish a new block formatting context and expand to contains its floated children.
-
-In large projects, I would write a utility `.clearfix` class and use them in places where I need it. `overflow: hidden` might clip children if the children is taller than the parent and is not very ideal.
-
-### Explain CSS sprites, and how you would implement them on a page or site.
-
-CSS sprites combine multiple images into one single larger image. It is commonly used technique for icons (Gmail uses it). How to implement it:
-
-1. Use a sprite generator that packs multiple images into one and generate the appropriate CSS for it.
-1. Each image would have a corresponding CSS class with `background-image`, `background-position` and `background-size` properties defined.
-1. To use that image, add the corresponding class to your element.
-
-**Advantages:**
-
-* Reduce the number of HTTP requests for multiple images (only one single request is required per spritesheet). But with HTTP2, loading multiple images is no longer much of an issue.
-* Advance downloading of assets that won't be downloaded until needed, such as images that only appear upon `:hover` pseudo-states. Blinking wouldn't be seen.
-
-###### References
-
-* https://css-tricks.com/css-sprites/
-
-### How would you approach fixing browser-specific styling issues?
-
-* After identifying the issue and the offending browser, use a separate style sheet that only loads when that specific browser is being used. This technique requires server-side rendering though.
-* Use libraries like Bootstrap that already handles these styling issues for you.
-* Use `autoprefixer` to automatically add vendor prefixes to your code.
-* Use Reset CSS or Normalize.css.
-
-### How do you serve your pages for feature-constrained browsers? What techniques/processes do you use?
-
-* Graceful degradation - The practice of building an application for modern browsers while ensuring it remains functional in older browsers.
-* Progressive enhancement - The practice of building an application for a base level of user experience, but adding functional enhancements when a browser supports it.
-* Use [caniuse.com](https://caniuse.com/) to check for feature support.
-* Autoprefixer for automatic vendor prefix insertion.
-* Feature detection using [Modernizr](https://modernizr.com/).
-
-### What are the different ways to visually hide content (and make it available only for screen readers)?
-
-These techniques are related to accessibility (a11y).
-
-* `visibility: hidden`. However the element is still in the flow of the page, and still takes up space.
-* `width: 0; height: 0`. Make the element not take up any space on the screen at all, resulting in not showing it.
-* `position: absolute; left: -99999px`. Position it outside of the screen.
-* `text-indent: -9999px`. This only works on text within the `block` elements.
-* Metadata. For example by using Schema.org, RDF and JSON-LD.
-* WAI-ARIA. A W3C technical specification that specifies how to increase the accessibility of web pages.
-
-Even if WAI-ARIA is the ideal solution, I would go with the `absolute` positioning approach, as it has the least caveats, works for most elements and it's an easy technique.
-
-###### References
-
-* https://www.w3.org/TR/wai-aria-1.1/
-* https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA
-* http://a11yproject.com/
-
-### Have you ever used a grid system, and if so, what do you prefer?
-
-I like the `float`-based grid system because it still has the most browser support among the alternative existing systems (flex, grid). It has been used in Bootstrap for years and has been proven to work.
-
-### Have you used or implemented media queries or mobile-specific layouts/CSS?
-
-Yes. An example would be transforming a stacked pill navigation into a fixed-bottom tab navigation beyond a certain breakpoint.
-
-### Are you familiar with styling SVG?
-
-No... Sadly.
-
-### How do you optimize your webpages for print?
-
-* Create a stylesheet for print or use media queries.
-
-```html
-<!-- Main stylesheet on top -->
-<link rel="stylesheet" href="/global.css" media="all" />
-<!-- Print only, on bottom -->
-<link rel="stylesheet" href="/print.css" media="print" />
-```
-
-Make sure to put non-print styles inside `@media screen { ... }`.
-
-```css
-@media print {
-  ...;
-}
-```
-
-* Deliberately add page breaks.
-
-```html
-<style>
-.page-break {
-  display: none;
-  page-break-before: always;
-}
-</style>
-
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Fusce eu felis. Curabitur sit amet magna. Nullam aliquet. Aliquam ut diam...
-<div class="page-break"></div>
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit....
-```
-
-###### References
-
-* https://davidwalsh.name/optimizing-structure-print-css
-
-### What are some of the "gotchas" for writing efficient CSS?
-
-Firstly, understand that browsers match selectors from rightmost (key selector) to left. Browsers filter out elements in the DOM according to the key selector, and traverse up its parent elements to determine matches. The shorter the length of the selector chain, the faster the browser can determine if that element matches the selector. Hence avoid key selectors that are tag and universal selectors. They match a large numbers of elements and browsers will have to do more work in determining if the parents do match.
-
-[BEM (Block Element Modifier)](https://bem.info/) methodology recommends that everything has a single class, and, where you need hierarchy, that gets baked into the name of the class as well, this naturally makes the selector efficient and easy to override.
-
-Be aware of which CSS properties trigger reflow, repaint and compositing. Avoid writing styles that change the layout (trigger reflow) where possible.
-
-###### References
-
-* https://developers.google.com/web/fundamentals/performance/rendering/
-* https://csstriggers.com/
-
-### What are the advantages/disadvantages of using CSS preprocessors?
-
-**Advantages:**
-
-* CSS is made more maintainable.
-* Easy to write nested selectors.
-* Variables for consistent theming. Can share theme files across different projects.
-* Mixins to generate repeated CSS.
-* Splitting your code into multiple files. CSS files can be split up too but doing so will require a HTTP request to download each CSS file.
-
-**Disadvantages:**
-
-* Requires tools for preprocessing. Re-compilation time can be slow.
-
-### Describe what you like and dislike about the CSS preprocessors you have used.
-
-**Likes:**
-
-* Mostly the advantages mentioned above.
-* Less is written in JavaScript, which plays well with Node.
-
-**Dislikes:**
-
-* I use Sass via `node-sass`, which is a binding for LibSass written in C++. I have to frequently recompile it when switching between node versions.
-* In Less, variable names are prefixed with `@`, which can be confused with native CSS keywords like `@media`, `@import` and `@font-face` rule.
-
-### How would you implement a web design comp that uses non-standard fonts?
-
-Use `@font-face` and define `font-family` for different `font-weight`s.
-
-### Explain how a browser determines what elements match a CSS selector.
-
-This part is related to the above about writing efficient CSS. Browsers match selectors from rightmost (key selector) to left. Browsers filter out elements in the DOM according to the key selector, and traverse up its parent elements to determine matches. The shorter the length of the selector chain, the faster the browser can determine if that element matches the selector.
-
-For example with this selector `p span`, browsers firstly find all the `<span>` elements, and traverse up its parent all the way up to the root to find the `<p>` element. For a particular `<span>`, as soon as it finds a `<p>`, it knows that the `<span>` matches and can stop its matching.
-
-###### References
-
-* https://stackoverflow.com/questions/5797014/why-do-browsers-match-css-selectors-from-right-to-left
-
-### Describe pseudo-elements and discuss what they are used for.
-
-A CSS pseudo-element is a keyword added to a selector that lets you style a specific part of the selected element(s). They can be used for decoration (`:first-line`, `:first-letter`) or adding elements to the markup (combined with `content: ...`) without having to modify the markup (`:before`, `:after`).
-
-* `:first-line` and `:first-letter` can be used to decorate text.
-* Used in the `.clearfix` hack as shown above to add a zero-space element with `clear: both`.
-* Triangular arrows in tooltips use `:before` and `:after`. Encourages separation of concerns because the triangle is considered part of styling and not really the DOM. It's not really possible to draw a triangle with just CSS styles without using an additional HTML element.
-
-###### References
-
-* https://css-tricks.com/almanac/selectors/a/after-and-before/
-
-### Explain your understanding of the box model and how you would tell the browser in CSS to render your layout in different box models.
-
-The CSS box model describes the rectangular boxes that are generated for elements in the document tree and laid out according to the visual formatting model. Each box has a content area (e.g. text, an image, etc.) and optional surrounding `padding`, `border`, and `margin` areas.
-
-The CSS box model is responsible for calculating:
-
-* How much space a block element takes up.
-* Whether or not borders and/or margins overlap, or collapse.
-* A box's dimensions.
-
-The box model has the following rules:
-
-* The dimensions of a block element are calculated by `width`, `height`, `padding`, `border`s, and `margin`s.
-* If no `height` is specified, a block element will be as high as the content it contains, plus `padding` (unless there are floats, for which see below).
-* If no `width` is specified, a non-floated block element will expand to fit the width of its parent minus `padding`.
-* The `height` of an element is calculated by the content's `height`.
-* The `width` of an element is calculated by the content's `width`.
-* By default, `padding`s and `border`s are not part of the `width` and `height` of an element.
-
-###### References
-
-* https://www.smashingmagazine.com/2010/06/the-principles-of-cross-browser-css-coding/#understand-the-css-box-model
-
-### What does `* { box-sizing: border-box; }` do? What are its advantages?
-
-* By default, elements have `box-sizing: content-box` applied, and only the content size is being accounted for.
-* `box-sizing: border-box` changes how the `width` and `height` of elements are being calculated, `border` and `padding` are also being included in the calculation.
-* The `height` of an element is now calculated by the content's `height` + vertical `padding` + vertical `border` width.
-* The `width` of an element is now calculated by the content's `width` + horizontal `padding` + horizontal `border` width.
-
-### List as many values for the `display` property that you can remember.
-
-* `none`, `block`, `inline`, `inline-block`, `table`, `table-row`, `table-cell`, `list-item`.
-
-### What's the difference between `inline` and `inline-block`?
-
-I shall throw in a comparison with `block` for good measure.
-
-|                                      | `block`                                                                                     | `inline-block`                                                   | `inline`                                                                                                                                                                                                             |
-| ------------------------------------ | ------------------------------------------------------------------------------------------- | ---------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Size                                 | Fills up the width of its parent container.                                                 | Depends on content.                                              | Depends on content.                                                                                                                                                                                                  |
-| Positioning                          | Start on a new line and tolerates no HTML elements next to it (except when you add `float`) | Flows along with other content and allows other elements beside. | Flows along with other content and allows other elements beside.                                                                                                                                                     |
-| Can specify `width` and `height`     | Yes                                                                                         | Yes                                                              | No. Will ignore if being set.                                                                                                                                                                                        |
-| Can be aligned with `vertical-align` | No                                                                                          | Yes                                                              | Yes                                                                                                                                                                                                                  |
-| Margins and paddings                 | All sides respected.                                                                        | All sides respected.                                             | Only horizontal sides respected. Vertical sides, if specified, do not affect layout. Vertical space it takes up depends on `line-height`, even though the `border` and `padding` appear visually around the content. |
-| Float                                | -                                                                                           | -                                                                | Becomes like a `block` element where you can set vertical margins and paddings.                                                                                                                                      |
-
-### What's the difference between a `relative`, `fixed`, `absolute` and `static`-ally positioned element?\*\*
-
-A positioned element is an element whose computed `position` property is either `relative`, `absolute`, `fixed` or `sticky`.
-
-* `static` - The default position; the element will flow into the page as it normally would. The `top`, `right`, `bottom`, `left` and `z-index` properties do not apply.
-* `relative` - The element's position is adjusted relative to itself, without changing layout (and thus leaving a gap for the element where it would have been had it not been positioned).
-* `absolute` - The element is removed from the flow of the page and positioned at a specified position relative to its closest positioned ancestor if any, or otherwise relative to the initial containing block. Absolutely positioned boxes can have margins, and they do not collapse with any other margins. These elements do not affect the position of other elements.
-* `fixed` - The element is removed from the flow of the page and positioned at a specified position relative to the viewport and doesn't move when scrolled.
-* `sticky` - Sticky positioning is a hybrid of relative and fixed positioning. The element is treated as `relative` positioned until it crosses a specified threshold, at which point it is treated as `fixed` positioned.
-
-###### References
-
-* https://developer.mozilla.org/en/docs/Web/CSS/position
-
-### What existing CSS frameworks have you used locally, or in production? How would you change/improve them?
-
-* **Bootstrap** - Slow release cycle. Bootstrap 4 has been in alpha for almost 2 years. Add a spinner button component, as it is widely-used.
-* **Semantic UI** - Source code structure makes theme customization extremely hard to understand. Painful to customize with unconventional theming system. Hardcoded config path within the vendor library. Not well-designed for overriding variables unlike in Bootstrap.
-* **Bulma** - A lot of non-semantic and superfluous classes and markup required. Not backward compatible. Upgrading versions breaks the app in subtle manners.
-
-### Have you played around with the new CSS Flexbox or Grid specs?
-
-Yes. Flexbox is mainly meant for 1-dimensional layouts while Grid is meant for 2-dimensional layouts.
-
-Flexbox solves many common problems in CSS, such as vertical centering of elements within a container, sticky footer, etc. Bootstrap and Bulma are based on Flexbox, and it is probably the recommended way to create layouts these days. Have tried Flexbox before but ran into some browser incompatibility issues (Safari) in using `flex-grow`, and I had to rewrite my code using `inline-blocks` and math to calculate the widths in percentages, it wasn't a nice experience.
-
-Grid is by far the most intuitive approach for creating grid-based layouts (it better be!) but browser support is not wide at the moment.
-
-###### References
-
-* https://philipwalton.github.io/solved-by-flexbox/
-
-### How is responsive design different from adaptive design?
-
-Both responsive and adaptive design attempt to optimize the user experience across different devices, adjusting for different viewport sizes, resolutions, usage contexts, control mechanisms, and so on.
-
-Responsive design works on the principle of flexibility - a single fluid website that can look good on any device. Responsive websites use media queries, flexible grids, and responsive images to create a user experience that flexes and changes based on a multitude of factors. Like a single ball growing or shrinking to fit through several different hoops.
-
-Adaptive design is more like the modern definition of progressive enhancement. Instead of one flexible design, adaptive design detects the device and other features, and then provides the appropriate feature and layout based on a predefined set of viewport sizes and other characteristics. The site detects the type of device used, and delivers the pre-set layout for that device. Instead of a single ball going through several different-sized hoops, you'd have several different balls to use depending on the hoop size.
-
-###### References
-
-* https://developer.mozilla.org/en-US/docs/Archive/Apps/Design/UI_layout_basics/Responsive_design_versus_adaptive_design
-* http://mediumwell.com/responsive-adaptive-mobile/
-* https://css-tricks.com/the-difference-between-responsive-and-adaptive-design/
-
-### Have you ever worked with retina graphics? If so, when and what techniques did you use?
-
-I tend to use higher resolution graphics (twice the display size) to handle retina display. The better way would be to use a media query like `@media only screen and (min-device-pixel-ratio: 2) { ... }` and change the `background-image`.
-
-For icons, I would also opt to use svgs and icon fonts where possible, as they render very crisply regardless of resolution.
-
-Another method would be to use JavaScript to replace the `<img>` `src` attribute with higher resolution versions after checking the `window.devicePixelRatio` value.
-
-###### References
-
-* https://www.sitepoint.com/css-techniques-for-retina-displays/
-
-### Is there any reason you'd want to use `translate()` instead of `absolute` positioning, or vice-versa? And why?
-
-`translate()` is a value of CSS `transform`. Changing `transform` or `opacity` does not trigger browser reflow or repaint, only compositions, whereas changing the absolute positioning triggers `reflow`. `transform` causes the browser to create a GPU layer for the element but changing absolute positioning properties uses the CPU. Hence `translate()` is more efficient and will result in shorter paint times for smoother animations.
-
-When using `translate()`, the element still takes up its original space (sort of like `position: relative`), unlike in changing the absolute positioning.
-
-###### References
-
-* https://www.paulirish.com/2012/why-moving-elements-with-translate-is-better-than-posabs-topleft/
-
-### Other Answers
-
-* https://neal.codes/blog/front-end-interview-css-questions
-* https://quizlet.com/28293152/front-end-interview-questions-css-flash-cards/
-* http://peterdoes.it/2015/12/03/a-personal-exercise-front-end-job-interview-questions-and-my-answers-all/
-
----
-
-## JS Questions
-
-Answers to [Front-end Job Interview Questions - JS Questions](https://github.com/h5bp/Front-end-Developer-Interview-Questions#js-questions). Pull requests for suggestions and corrections are welcome!
-
-### Explain event delegation
-
+<details>
+<summary>Explain event delegation</summary>
+<br>
 Event delegation is a technique involving adding event listeners to a parent element instead of adding them to the descendant elements. The listener will fire whenever the event is triggered on the descendant elements due to event bubbling up the DOM. The benefits of this technique are:
 
 * Memory footprint goes down because only one single handler is needed on the parent element, rather than having to attach event handlers on each descendant.
@@ -1027,8 +558,11 @@ Event delegation is a technique involving adding event listeners to a parent ele
 * https://davidwalsh.name/event-delegate
 * https://stackoverflow.com/questions/1687296/what-is-dom-event-delegation
 
-### Explain how `this` works in JavaScript
+</details>
 
+<details>
+<summary>Explain how `this` works in JavaScript</summary>
+<br>
 There's no simple explanation for `this`; it is one of the most confusing concepts in JavaScript. A hand-wavey explanation is that the value of `this` depends on how the function is called. I have read many explanations on `this` online, and I found [Arnav Aggrawal](https://medium.com/@arnav_aggarwal)'s explanation to be the clearest. The following rules are applied:
 
 1. If the `new` keyword is used when calling the function, `this` inside the function is a brand new object.
@@ -1045,8 +579,11 @@ For an in-depth explanation, do check out his [article on Medium](https://codebu
 * https://codeburst.io/the-simple-rules-to-this-in-javascript-35d97f31bde3
 * https://stackoverflow.com/a/3127440/1751946
 
-### Explain how prototypal inheritance works
+</details>
 
+<details>
+<summary>Explain how prototypal inheritance works</summary>
+<br>
 This is an extremely common JavaScript interview question. All JavaScript objects have a `prototype` property, that is a reference to another object. When a property is accessed on an object and if the property is not found on that object, the JavaScript engine looks at the object's `prototype`, and the `prototype`'s `prototype` and so on, until it finds the property defined on one of the `prototype`s or until it reaches the end of the prototype chain. This behaviour simulates classical inheritance, but it is really more of [delegation than inheritance](https://davidwalsh.name/javascript-objects).
 
 ###### References
@@ -1054,8 +591,11 @@ This is an extremely common JavaScript interview question. All JavaScript object
 * https://www.quora.com/What-is-prototypal-inheritance/answer/Kyle-Simpson
 * https://davidwalsh.name/javascript-objects
 
-### What do you think of AMD vs CommonJS?
+</details>
 
+<details>
+<summary>What do you think of AMD vs CommonJS?</summary>
+<br>
 Both are ways to implement a module system, which was not natively present in JavaScript until ES2015 came along. CommonJS is synchronous while AMD (Asynchronous Module Definition) is obviously asynchronous. CommonJS is designed with server-side development in mind while AMD, with its support for asynchronous loading of modules, is more intended for browsers.
 
 I find AMD syntax to be quite verbose and CommonJS is closer to the style you would write import statements in other languages. Most of the time, I find AMD unnecessary, because if you served all your JavaScript into one concatenated bundle file, you wouldn't benefit from the async loading properties. Also, CommonJS syntax is closer to Node style of writing modules and there is less context-switching overhead when switching between client side and server side JavaScript development.
@@ -1067,8 +607,11 @@ I'm glad that with ES2015 modules, that has support for both synchronous and asy
 * https://auth0.com/blog/javascript-module-systems-showdown/
 * https://stackoverflow.com/questions/16521471/relation-between-commonjs-amd-and-requirejs
 
-### Explain why the following doesn't work as an IIFE: `function foo(){ }();`. What needs to be changed to properly make it an IIFE?
+</details>
 
+<details>
+<summary>Explain why the following doesn't work as an IIFE: `function foo(){ }();`. What needs to be changed to properly make it an IIFE?</summary>
+<br>
 IIFE stands for Immediately Invoked Function Expressions. The JavaScript parser reads `function foo(){ }();` as `function foo(){ }` and `();`, where the former is a function declaration and the latter (a pair of brackets) is an attempt at calling a function but there is no name specified, hence it throws `Uncaught SyntaxError: Unexpected token )`.
 
 Here are two ways to fix it that involves adding more brackets: `(function foo(){ })()` and `(function foo(){ }())`. These functions are not exposed in the global scope and you can even omit its name if you do not need to reference itself within the body.
@@ -1077,8 +620,11 @@ Here are two ways to fix it that involves adding more brackets: `(function foo()
 
 * http://lucybain.com/blog/2014/immediately-invoked-function-expression/
 
-### What's the difference between a variable that is: `null`, `undefined` or undeclared? How would you go about checking for any of these states?
+</details>
 
+<details>
+<summary>What's the difference between a variable that is: `null`, `undefined` or undeclared? How would you go about checking for any of these states?</summary>
+<br>
 **Undeclared** variables are created when you assign to a value to an identifier that is not previously created using `var`, `let` or `const`. Undeclared variables will be defined globally, outside of the current scope. In strict mode, a `ReferenceError` will be thrown when you try to assign to an undeclared variable. Undeclared variables are bad just like how global variables are bad. Avoid them at all cost! To check for them, wrap its usage in a `try`/`catch` block.
 
 ```js
@@ -1121,8 +667,11 @@ As a personal habit, I never leave my variables undeclared or unassigned. I will
 * https://stackoverflow.com/questions/15985875/effect-of-declared-and-undeclared-variables
 * https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/undefined
 
-### What is a closure, and how/why would you use one?
+</details>
 
+<details>
+<summary>What is a closure, and how/why would you use one?</summary>
+<br>
 A closure is the combination of a function and the lexical environment within which that function was declared. The word "lexical" refers to the fact that lexical scoping uses the location where a variable is declared within the source code to determine where that variable is available. Closures are functions that have access to the outer (enclosing) function's variables—scope chain even after the outer function has returned.
 
 **Why would you use one?**
@@ -1135,8 +684,11 @@ A closure is the combination of a function and the lexical environment within wh
 * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures
 * https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-closure-b2f0d2152b36
 
-### What's a typical use case for anonymous functions?
+</details>
 
+<details>
+<summary>What's a typical use case for anonymous functions?</summary>
+<br>
 They can be used in IIFEs to encapsulate some code within a local scope so that variables declared in it do not leak to the global scope.
 
 ```js
@@ -1168,16 +720,22 @@ console.log(double); // [2, 4, 6]
 * https://www.quora.com/What-is-a-typical-usecase-for-anonymous-functions
 * https://stackoverflow.com/questions/10273185/what-are-the-benefits-to-using-anonymous-functions-instead-of-named-functions-fo
 
-### How do you organize your code? (module pattern, classical inheritance?)
+</details>
 
+<details>
+<summary>How do you organize your code? (module pattern, classical inheritance?)</summary>
+<br>
 In the past, I used Backbone for my models which encourages a more OOP approach, creating Backbone models and attaching methods to them.
 
 The module pattern is still great, but these days, I use the Flux architecture based on React/Redux which encourages a single-directional functional programming approach instead. I would represent my app's models using plain objects and write utility pure functions to manipulate these objects. State is manipulated using actions and reducers like in any other Redux application.
 
 I avoid using classical inheritance where possible. When and if I do, I stick to [these rules](https://medium.com/@dan_abramov/how-to-use-classes-and-sleep-at-night-9af8de78ccb4).
 
-### What's the difference between host objects and native objects?
+</details>
 
+<details>
+<summary>What's the difference between host objects and native objects?</summary>
+<br>
 Native objects are objects that are part of the JavaScript language defined by the ECMAScript specification, such as `String`, `Math`, `RegExp`, `Object`, `Function`, etc.
 
 Host objects are provided by the runtime environment (browser or Node), such as `window`, `XMLHTTPRequest`, etc.
@@ -1186,8 +744,11 @@ Host objects are provided by the runtime environment (browser or Node), such as 
 
 * https://stackoverflow.com/questions/7614317/what-is-the-difference-between-native-objects-and-host-objects
 
-### Difference between: `function Person(){}`, `var person = Person()`, and `var person = new Person()`?
+</details>
 
+<details>
+<summary>Difference between: `function Person(){}`, `var person = Person()`, and `var person = new Person()`?</summary>
+<br>
 This question is pretty vague. My best guess at its intention is that it is asking about constructors in JavaScript. Technically speaking, `function Person(){}` is just a normal function declaration. The convention is use PascalCase for functions that are intended to be used as constructors.
 
 `var person = Person()` invokes the `Person` as a function, and not as a constructor. Invoking as such is a common mistake if it the function is intended to be used as a constructor. Typically, the constructor does not return anything, hence invoking the constructor like a normal function will return `undefined` and that gets assigned to the variable intended as the instance.
@@ -1212,8 +773,11 @@ console.log(person.name); // "john"
 
 * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/new
 
-### What's the difference between `.call` and `.apply`?
+</details>
 
+<details>
+<summary>What's the difference between `.call` and `.apply`?</summary>
+<br>
 Both `.call` and `.apply` are used to invoke functions and the first parameter will be used as the value of `this` within the function. However, `.call` takes in a comma-separated arguments as the next arguments while `.apply` takes in an array of arguments as the next argument. An easy way to remember this is C for `call` and comma-separated and A for `apply` and array of arguments.
 
 ```js
@@ -1225,8 +789,11 @@ console.log(add.call(null, 1, 2)); // 3
 console.log(add.apply(null, [1, 2])); // 3
 ```
 
-### Explain `Function.prototype.bind`.
+</details>
 
+<details>
+<summary>Explain `Function.prototype.bind`.</summary>
+<br>
 Taken word-for-word from [MDN](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_objects/Function/bind):
 
 > The `bind()` method creates a new function that, when called, has its this keyword set to the provided value, with a given sequence of arguments preceding any provided when the new function is called.
@@ -1237,8 +804,11 @@ In my experience, it is most useful for binding the value of `this` in methods o
 
 * https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_objects/Function/bind
 
-### When would you use `document.write()`?
+</details>
 
+<details>
+<summary>When would you use `document.write()`?</summary>
+<br>
 `document.write()` writes a string of text to a document stream opened by `document.open()`. When `document.write()` is executed after the page has loaded, it will call `document.open` which clears the whole document (`<head>` and `<body>` removed!) and replaces the contents with the given parameter value in string. Hence it is usually considered dangerous and prone to misuse.
 
 There are some answers online that explain `document.write()` is being used in analytics code or [when you want to include styles that should only work if JavaScript is enabled](https://www.quirksmode.org/blog/archives/2005/06/three_javascrip_1.html). It is even being used in HTML5 boilerplate to [load scripts in parallel and preserve execution order](https://github.com/paulirish/html5-boilerplate/wiki/Script-Loading-Techniques#documentwrite-script-tag)! However, I suspect those reasons might be outdated and in the modern day, they can be achieved without using `document.write()`. Please do correct me if I'm wrong about this.
@@ -1248,8 +818,11 @@ There are some answers online that explain `document.write()` is being used in a
 * https://www.quirksmode.org/blog/archives/2005/06/three_javascrip_1.html
 * https://github.com/h5bp/html5-boilerplate/wiki/Script-Loading-Techniques#documentwrite-script-tag
 
-### What's the difference between feature detection, feature inference, and using the UA string?
+</details>
 
+<details>
+<summary>What's the difference between feature detection, feature inference, and using the UA string?</summary>
+<br>
 **Feature Detection**
 
 Feature detection involves working out whether a browser supports a certain block of code, and running different code dependent on whether it does (or doesn't), so that the browser can always provide a working experience rather crashing/erroring in some browsers. For example:
@@ -1286,8 +859,11 @@ This is a browser-reported string that allows the network protocol peers to iden
 * https://stackoverflow.com/questions/20104930/whats-the-difference-between-feature-detection-feature-inference-and-using-th
 * https://developer.mozilla.org/en-US/docs/Web/HTTP/Browser_detection_using_the_user_agent
 
-### Explain Ajax in as much detail as possible.
+</details>
 
+<details>
+<summary>Explain Ajax in as much detail as possible.</summary>
+<br>
 Ajax (asynchronous JavaScript and XML) is a set of web development techniques using many web technologies on the client side to create asynchronous web applications. With Ajax, web applications can send data to and retrieve from a server asynchronously (in the background) without interfering with the display and behavior of the existing page. By decoupling the data interchange layer from the presentation layer, Ajax allows for web pages, and by extension web applications, to change content dynamically without the need to reload the entire page. In practice, modern implementations commonly substitute JSON for XML due to the advantages of being native to JavaScript.
 
 The `XMLHttpRequest` API is frequently used for the asynchronous communication or these days, the `fetch` API.
@@ -1297,8 +873,11 @@ The `XMLHttpRequest` API is frequently used for the asynchronous communication o
 * https://en.wikipedia.org/wiki/Ajax_(programming)
 * https://developer.mozilla.org/en-US/docs/AJAX
 
-### What are the advantages and disadvantages of using Ajax?
+</details>
 
+<details>
+<summary>What are the advantages and disadvantages of using Ajax?</summary>
+<br>
 **Advantages**
 
 * Better interactivity. New content from the server can be changed dynamically without the need to reload the entire page.
@@ -1313,8 +892,11 @@ The `XMLHttpRequest` API is frequently used for the asynchronous communication o
 * Some webcrawlers do not execute JavaScript and would not see content that has been loaded by JavaScript.
 * Basically most of the disadvantages of an SPA.
 
-### Explain how JSONP works (and how it's not really Ajax).
+</details>
 
+<details>
+<summary>Explain how JSONP works (and how it's not really Ajax).</summary>
+<br>
 JSONP (JSON with Padding) is a method commonly used to bypass the cross-domain policies in web browsers because Ajax requests from the current page to a cross-origin domain is not allowed.
 
 JSONP works by making a request to a cross-origin domain via a `<script>` tag and usually with a `callback` query parameter, for example: `https://example.com?callback=printData`. The server will then wrap the data within a function called `printData` and return it to the client.
@@ -1345,8 +927,11 @@ These days, [CORS](http://en.wikipedia.org/wiki/Cross-origin_resource_sharing) i
 
 * https://stackoverflow.com/a/2067584/1751946
 
-### Have you ever used JavaScript templating? If so, what libraries have you used?
+</details>
 
+<details>
+<summary>Have you ever used JavaScript templating? If so, what libraries have you used?</summary>
+<br>
 Yes. Handlebars, Underscore, Lodash, AngularJS and JSX. I disliked templating in AngularJS because it made heavy use of strings in the directives and typos would go uncaught. JSX is my new favourite as it is closer to JavaScript and there is barely any syntax to learn. Nowadays, you can even use ES2015 template string literals as a quick way for creating templates without relying on third-party code.
 
 ```js
@@ -1355,8 +940,11 @@ const template = `<div>My name is: ${name}</div>`;
 
 However, do be aware of a potential XSS in the above approach as the contents are not escaped for you, unlike in templating libraries.
 
-### Explain "hoisting".
+</details>
 
+<details>
+<summary>Explain "hoisting".</summary>
+<br>
 Hoisting is a term used to explain the behavior of variable declarations in your code. Variables declared or initialized with the `var` keyword will have their declaration "hoisted" up to the top of the current scope. However, only the declaration is hoisted, the assignment (if there is one), will stay where it is. Let's explain with a few examples.
 
 ```js
@@ -1391,12 +979,18 @@ var bar = function() {
 console.log(bar); // [Function: bar]
 ```
 
-### Describe event bubbling.
+</details>
 
+<details>
+<summary>Describe event bubbling.</summary>
+<br>
 When an event triggers on a DOM element, it will attempt to handle the event if there is a listener attached, then the event is bubbled up to its parent and the same thing happens. This bubbling occurs up the element's ancestors all the way to the `document`. Event bubbling is the mechanism behind event delegation.
 
-### What's the difference between an "attribute" and a "property"?
+</details>
 
+<details>
+<summary>What's the difference between an "attribute" and a "property"?</summary>
+<br>
 Attributes are defined on the HTML markup but properties are defined on the DOM. To illustrate the difference, imagine we have this text field in our HTML: `<input type="text" value="Hello">`.
 
 ```js
@@ -1416,8 +1010,11 @@ console.log(input.value); // Hello World!
 
 * https://stackoverflow.com/questions/6003819/properties-and-attributes-in-html
 
-### Why is extending built-in JavaScript objects not a good idea?
+</details>
 
+<details>
+<summary>Why is extending built-in JavaScript objects not a good idea?</summary>
+<br>
 Extending a built-in/native JavaScript object means adding properties/functions to its `prototype`. While this may seem like a good idea at first, it is dangerous in practice. Imagine your code uses a few libraries that both extend the `Array.prototype` by adding the same `contains` method, the implementations will overwrite each other and your code will break if the behavior of these two methods are not the same.
 
 The only time you may want to extend a native object is when you want to create a polyfill, essentially providing your own implementation for a method that is part of the JavaScript specification but might not exist in the user's browser due to it being an older browser.
@@ -1426,8 +1023,11 @@ The only time you may want to extend a native object is when you want to create 
 
 * http://lucybain.com/blog/2014/js-extending-built-in-objects/
 
-### Difference between document load event and document DOMContentLoaded event?
+</details>
 
+<details>
+<summary>Difference between document load event and document DOMContentLoaded event?</summary>
+<br>
 The `DOMContentLoaded` event is fired when the initial HTML document has been completely loaded and parsed, without waiting for stylesheets, images, and subframes to finish loading.
 
 `window`'s `load` event is only fired after the DOM and all dependent resources and assets have loaded.
@@ -1437,8 +1037,11 @@ The `DOMContentLoaded` event is fired when the initial HTML document has been co
 * https://developer.mozilla.org/en-US/docs/Web/Events/DOMContentLoaded
 * https://developer.mozilla.org/en-US/docs/Web/Events/load
 
-### What is the difference between `==` and `===`?
+</details>
 
+<details>
+<summary>What is the difference between `==` and `===`?</summary>
+<br>
 `==` is the abstract equality operator while `===` is the strict equality operator. The `==` operator will compare for equality after doing any necessary type conversions. The `===` operator will not do type conversion, so if two values are not the same type `===` will simply return `false`. When using `==`, funky things can happen, such as:
 
 ```js
@@ -1462,16 +1065,22 @@ console.log(a == undefined); // true
 
 * https://stackoverflow.com/questions/359494/which-equals-operator-vs-should-be-used-in-javascript-comparisons
 
-### Explain the same-origin policy with regards to JavaScript.
+</details>
 
+<details>
+<summary>Explain the same-origin policy with regards to JavaScript.</summary>
+<br>
 The same-origin policy prevents JavaScript from making requests across domain boundaries. An origin is defined as a combination of URI scheme, hostname, and port number. This policy prevents a malicious script on one page from obtaining access to sensitive data on another web page through that page's Document Object Model.
 
 ###### References
 
 * https://en.wikipedia.org/wiki/Same-origin_policy
 
-### Make this work:
+</details>
 
+<details>
+<summary>Make this work:</summary>
+<br>
 ```js
 duplicate([1, 2, 3, 4, 5]); // [1,2,3,4,5,1,2,3,4,5]
 ```
@@ -1484,16 +1093,22 @@ function duplicate(arr) {
 duplicate([1, 2, 3, 4, 5]); // [1,2,3,4,5,1,2,3,4,5]
 ```
 
-### Why is it called a Ternary expression, what does the word "Ternary" indicate?
+</details>
 
+<details>
+<summary>Why is it called a Ternary expression, what does the word "Ternary" indicate?</summary>
+<br>
 "Ternary" indicates three, and a ternary expression accepts three operands, the test condition, the "then" expression and the "else" expression. Ternary expressions are not specific to JavaScript and I'm not sure why it is even in this list.
 
 ###### References
 
 * https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Conditional_Operator
 
-### What is `"use strict";`? What are the advantages and disadvantages to using it?
+</details>
 
+<details>
+<summary>What is `"use strict";`? What are the advantages and disadvantages to using it?</summary>
+<br>
 'use strict' is a statement used to enable strict mode to entire scripts or individual functions. Strict mode is a way to opt in to a restricted variant of JavaScript.
 
 Advantages:
@@ -1519,8 +1134,11 @@ Overall, I think the benefits outweigh the disadvantages, and I never had to rel
 * http://2ality.com/2011/10/strict-mode-hatred.html
 * http://lucybain.com/blog/2014/js-use-strict/
 
-### Create a for loop that iterates up to `100` while outputting **"fizz"** at multiples of `3`, **"buzz"** at multiples of `5` and **"fizzbuzz"** at multiples of `3` and `5`.
+</details>
 
+<details>
+<summary>Create a for loop that iterates up to `100` while outputting **"fizz"** at multiples of `3`, **"buzz"** at multiples of `5` and **"fizzbuzz"** at multiples of `3` and `5`.</summary>
+<br>
 Check out this version of FizzBuzz by [Paul Irish](https://gist.github.com/jaysonrowe/1592432#gistcomment-790724).
 
 ```js
@@ -1537,12 +1155,18 @@ I would not advise you to write the above during interviews though. Just stick w
 
 * https://gist.github.com/jaysonrowe/1592432
 
-### Why is it, in general, a good idea to leave the global scope of a website as-is and never touch it?
+</details>
 
+<details>
+<summary>Why is it, in general, a good idea to leave the global scope of a website as-is and never touch it?</summary>
+<br>
 Every script has access to the global scope, and if everyone is using the global namespace to define their own variables, there will bound to be collisions. Use the module pattern (IIFEs) to encapsulate your variables within a local namespace.
 
-### Why would you use something like the `load` event? Does this event have disadvantages? Do you know any alternatives, and why would you use those?
+</details>
 
+<details>
+<summary>Why would you use something like the `load` event? Does this event have disadvantages? Do you know any alternatives, and why would you use those?</summary>
+<br>
 The `load` event fires at the end of the document loading process. At this point, all of the objects in the document are in the DOM, and all the images, scripts, links and sub-frames have finished loading.
 
 The DOM event `DOMContentLoaded` will fire after the DOM for the page has been constructed, but do not wait for other resources to finish loading. This is preferred in certain cases when you do not need the full page to be loaded before initializing.
@@ -1553,8 +1177,11 @@ TODO.
 
 * https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onload
 
-### Explain what a single page app is and how to make one SEO-friendly.
+</details>
 
+<details>
+<summary>Explain what a single page app is and how to make one SEO-friendly.</summary>
+<br>
 The below is taken from the awesome [Grab Front End Guide](https://github.com/grab/front-end-guide), which coincidentally, is written by me!
 
 Web developers these days refer to the products they build as web apps, rather than websites. While there is no strict difference between the two terms, web apps tend to be highly interactive and dynamic, allowing the user to perform actions and receive a response for their action. Traditionally, the browser receives HTML from the server and renders it. When the user navigates to another URL, a full-page refresh is required and the server sends fresh new HTML for the new page. This is called server-side rendering.
@@ -1580,8 +1207,11 @@ The downsides:
 * http://blog.isquaredsoftware.com/presentations/2016-10-revolution-of-web-dev/
 * https://medium.freecodecamp.com/heres-why-client-side-rendering-won-46a349fadb52
 
-### What is the extent of your experience with Promises and/or their polyfills?
+</details>
 
+<details>
+<summary>What is the extent of your experience with Promises and/or their polyfills?</summary>
+<br>
 Possess working knowledge of it. A promise is an object that may produce a single value some time in the future: either a resolved value, or a reason that it's not resolved (e.g., a network error occurred). A promise may be in one of 3 possible states: fulfilled, rejected, or pending. Promise users can attach callbacks to handle the fulfilled value or the reason for rejection.
 
 Some common polyfills are `$.deferred`, Q and Bluebird but not all of them comply to the specification. ES2015 supports Promises out of the box and polyfills are typically not needed these days.
@@ -1590,8 +1220,11 @@ Some common polyfills are `$.deferred`, Q and Bluebird but not all of them compl
 
 * https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-promise-27fc71e77261
 
-### What are the pros and cons of using Promises instead of callbacks?
+</details>
 
+<details>
+<summary>What are the pros and cons of using Promises instead of callbacks?</summary>
+<br>
 **Pros**
 
 * Avoid callback hell which can be unreadable.
@@ -1603,8 +1236,11 @@ Some common polyfills are `$.deferred`, Q and Bluebird but not all of them compl
 * Slightly more complex code (debatable).
 * In older browsers where ES2015 is not supported, you need to load a polyfill in order to use it.
 
-### What are some of the advantages/disadvantages of writing JavaScript code in a language that compiles to JavaScript?
+</details>
 
+<details>
+<summary>What are some of the advantages/disadvantages of writing JavaScript code in a language that compiles to JavaScript?</summary>
+<br>
 Some examples of languages that compile to JavaScript include CoffeeScript, Elm, ClojureScript, PureScript and TypeScript.
 
 Advantages:
@@ -1629,8 +1265,11 @@ Practically, ES2015 has vastly improved JavaScript and made it much nicer to wri
 
 * https://softwareengineering.stackexchange.com/questions/72569/what-are-the-pros-and-cons-of-coffeescript
 
-### What tools and techniques do you use for debugging JavaScript code?
+</details>
 
+<details>
+<summary>What tools and techniques do you use for debugging JavaScript code?</summary>
+<br>
 * React and Redux
   * [React Devtools](https://github.com/facebook/react-devtools)
   * [Redux Devtools](https://github.com/gaearon/redux-devtools)
@@ -1644,8 +1283,11 @@ Practically, ES2015 has vastly improved JavaScript and made it much nicer to wri
 * https://hackernoon.com/twelve-fancy-chrome-devtools-tips-dc1e39d10d9d
 * https://raygun.com/blog/javascript-debugging/
 
-### What language constructions do you use for iterating over object properties and array items?
+</details>
 
+<details>
+<summary>What language constructions do you use for iterating over object properties and array items?</summary>
+<br>
 For objects:
 
 * `for` loops - `for (var property in obj) { console.log(property); }`. However, this will also iterate through its inherited properties, and you will add an `obj.hasOwnProperty(property)` check before using it.
@@ -1659,22 +1301,31 @@ For arrays:
 
 Most of the time, I would prefer the `.forEach` method, but it really depends on what you are trying to do. `for` loops allow more flexibility, such as prematurely terminate the loop using `break` or incrementing the iterator more than once per loop.
 
-### Explain the difference between mutable and immutable objects.
+</details>
 
+<details>
+<summary>Explain the difference between mutable and immutable objects.</summary>
+<br>
 * What is an example of an immutable object in JavaScript?
 * What are the pros and cons of immutability?
 * How can you achieve immutability in your own code?
 
 TODO
 
-### Explain the difference between synchronous and asynchronous functions.
+</details>
 
+<details>
+<summary>Explain the difference between synchronous and asynchronous functions.</summary>
+<br>
 Synchronous functions are blocking while asynchronous functions are not. In synchronous functions, statements complete before the next statement is run. In this case the program is evaluated exactly in order of the statements and execution of the program is paused if one of the statements take a very long time.
 
 Asynchronous functions usually accept a callback as a parameter and execution continues on the next line immediately after the asynchronous function is invoked. The callback is only invoked when the asynchronous operation is complete and the call stack is empty. Heavy duty operations such as loading data from a web server or querying a database should be done asynchronously so that the main thread can continue executing other operations instead of blocking until that long operation to complete (in the case of browsers, the UI will freeze).
 
-### What is event loop? What is the difference between call stack and task queue?
+</details>
 
+<details>
+<summary>What is event loop? What is the difference between call stack and task queue?</summary>
+<br>
 The event loop is a single-threaded loop that monitors the call stack and checks if there is any work to be done in the task queue. If the call stack is empty and there are callback functions in the task queue, a function is dequeued and pushed onto the call stack to be executed.
 
 If you haven't already checked out Philip Robert's [talk on the Event Loop](https://2014.jsconf.eu/speakers/philip-roberts-what-the-heck-is-the-event-loop-anyway.html), you should. It is one of the most viewed videos on JavaScript.
@@ -1684,8 +1335,11 @@ If you haven't already checked out Philip Robert's [talk on the Event Loop](http
 * https://2014.jsconf.eu/speakers/philip-roberts-what-the-heck-is-the-event-loop-anyway.html
 * http://theproactiveprogrammer.com/javascript/the-javascript-event-loop-a-stack-and-a-queue/
 
-### Explain the differences on the usage of `foo` between `function foo() {}` and `var foo = function() {}`
+</details>
 
+<details>
+<summary>Explain the differences on the usage of `foo` between `function foo() {}` and `var foo = function() {}`</summary>
+<br>
 The former is a function declaration while the latter is a function expression. The key difference is that function declarations have its body hoisted but the bodies of function expressions are not (they have the same hoisting behaviour as variables). For more explanation on hoisting, refer to the question above on hoisting. If you try to invoke a function expression before it is defined, you will get an `Uncaught TypeError: XXX is not a function` error.
 
 **Function Declaration**
@@ -1709,15 +1363,4 @@ var foo = function() {
 ###### References
 
 * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function
-
-### Other Answers
-
-* http://flowerszhong.github.io/2013/11/20/javascript-questions.html
-
-## Related
-
-If you are interested in how data structures are implemented, check out [Lago](https://github.com/yangshun/lago), a Data Structures and Algorithms library for JavaScript. It is pretty much still WIP but I intend to make it into a library that is able to be used in production and also a reference resource for revising Data Structures and Algorithms.
-
-## Contributing
-
-Feel free to make pull requests to correct any mistakes in the answers or suggest new questions.
+</details>
