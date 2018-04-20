@@ -10,6 +10,11 @@ Given "bbbbb", the answer is "b", with the length of 1.
 Given "pwwkew", the answer is "wke", with the length of 3. Note that the answer must be a substring, "pwke" is a subsequence and not a substring.
 */
 
+/*
+Use map to keep track of the index of all characters.
+If a character is repeated, update the index to the latest one
+/*
+
 /**
  * @param {string} s
  * @return {number}
