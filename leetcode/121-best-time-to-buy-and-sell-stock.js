@@ -26,13 +26,8 @@ var maxProfit = function(prices) {
     for (let i = 1;i < prices.length; i++) {
         const profit = prices[i] - minPrice;
 
-        if (profit > maxProfit) {
-            maxProfit = profit;
-        }
-
-        if (prices[i] < minPrice) {
-            minPrice = prices[i];
-        }
+        maxProfit = Math.max(maxProfit, profit);
+        minPrice = Math.min(prices[i], minPrice);
     }
 
     return maxProfit;
